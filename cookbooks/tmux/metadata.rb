@@ -1,0 +1,7 @@
+name 'tmux'
+maintainer 'Steven Danna'
+maintainer_email 'steve@chef.io'
+license 'Apache 2.0'
+description 'Installs tmux'
+long_description 'Installs tmux using either system packages or upstream source'
+version '1.5.0'

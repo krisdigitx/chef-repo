@@ -1,0 +1,41 @@
+{
+  "name": "tmux",
+  "description": "Installs tmux",
+  "long_description": "Installs tmux using either system packages or upstream source",
+  "maintainer": "Steven Danna",
+  "maintainer_email": "steve@chef.io",
+  "license": "Apache 2.0",
+  "platforms": {
+
+  },
+  "dependencies": {
+
+  },
+  "recommendations": {
+
+  },
+  "suggestions": {
+
+  },
+  "conflicting": {
+
+  },
+  "providing": {
+
+  },
+  "replacing": {
+
+  },
+  "attributes": {
+
+  },
+  "groupings": {
+
+  },
+  "recipes": {
+
+  },
+  "version": "1.5.0",
+  "source_url": "",
+  "issues_url": ""
+}
