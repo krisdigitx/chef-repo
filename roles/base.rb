@@ -28,7 +28,29 @@ run_list(
 
 
 default_attributes(
-  'ntp' => {
-    'servers' => ['0.uk.pool.ntp.org', '1.uk.pool.ntp.org']
+  "chef-client" => {
+    "server_url" => "https://chefserver.acentauri.net/organizations/acentauri",
+    "validation_client_name" => "acentauri-validator"
+  },
+  "authorization" => {
+    "sudo" => {
+      "groups" => ["admin", "wheel"],
+      "users" => ["kshk"]
+    }
+  },
+  "postfix" => {
+    "mail_type" => "client",
+    "mydomain" => "acentauri.net",
+    "myorigin" => "acentauri.net",
+    "relayhost" => "[smtp.int.acentauri.net]",
+    "smtp_use_tls" => "no"
+  },
+  "resolver" => {
+    "nameservers" => ["8.8.8.8", "8.8.8.4"],
+    "search" => "int.acentauri.net"
+  },
+  "ntp" => {
+    "servers" => ["time.int.acentauri.net"]
   }
+
 )
