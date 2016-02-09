@@ -1,9 +1,8 @@
 #
-# Author:: Sean OMeara (<someara@chef.io>)
-# Author:: Joshua Timberman (<joshua@chef.io>)
-# Recipe:: yum::default
+# Author:: Tim Smith (<tsmith@chef.io>)
+# Recipe:: yum::fedora_yum_compat
 #
-# Copyright 2013-2014, Chef Software, Inc (<legal@chef.io>)
+# Copyright 2015, Chef Software, Inc (<legal@chef.io>)
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,10 +16,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-yum_globalconfig '/etc/yum.conf' do
-  node['yum']['main'].each do |config, value|
-    send(config.to_sym, value) unless value.nil?
-  end
-
-  action :create
+execute 'install yum' do
+  command 'dnf install yum -y'
+  not_if { ::File.exist?('/var/lib/yum') }
+  action :run
 end
